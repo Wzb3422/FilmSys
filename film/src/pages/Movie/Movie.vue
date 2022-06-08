@@ -40,7 +40,7 @@
             //切换电影选项
             isHotMovie:true,
             //服务器地址
-            server:'http://localhost:3000',
+            server:'http://api.zebwu.com',
             //热门电影列表
             hotMovieList:[],
             //未上映电影列表

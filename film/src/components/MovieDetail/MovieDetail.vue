@@ -117,7 +117,7 @@ import { formatDate } from '../../common/util/util';
             averageScore:0,
             commentNum:0,
             //服务器地址
-            server:'http://localhost:3000',
+            server:'http://api.zebwu.com',
             jsonData:[],
             isShowMovie:false,
             notWishMovie:true,

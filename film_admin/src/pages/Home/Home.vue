@@ -31,7 +31,7 @@
       <div class="section">
         <div class="nav-bar">
           <el-menu :default-active="currentMenuIndex" class="el-menu-vertical">
-            
+
               <el-menu-item index="/user_manage" @click="handleMenuItemClick('/user_manage')">
                 <i class="el-icon-user-solid"></i>
                 <span slot="title">用户管理</span>
@@ -89,7 +89,7 @@ export default {
   data() {
     return {
       //服务器地址
-      server: "http://localhost:3000",
+      server: "http://api.zebwu.com",
       adminInfo: {},
       currentMenuIndex:'/user_manage'
     };

@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/': {  //使用"/api"来代替"http://f.apiplus.c"
-        target: 'http://localhost:3000', //源地址
+        target: 'http://api.zebwu.com', //源地址
         changeOrigin: true, //改变源
         pathRewrite: {
           '^/': '' //路径重写
@@ -27,7 +27,7 @@ module.exports = {
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
-    
+
     /**
      * Source Maps
      */

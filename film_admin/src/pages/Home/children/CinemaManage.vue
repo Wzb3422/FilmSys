@@ -39,7 +39,7 @@
             show-overflow-tooltip
             prop="specified_address">
           </el-table-column>
-          <el-table-column 
+          <el-table-column
           width="200"
           align="center"
           label="操作">
@@ -119,7 +119,7 @@
           };
           return {
             //服务器地址
-            server:'http://localhost:3000',
+            server:'http://api.zebwu.com',
             tableData:[],
             total:0,
             currentPage:1,

@@ -187,7 +187,7 @@ export default {
     };
     return {
       //服务器地址
-      server: "http://localhost:3000",
+      server: "http://api.zebwu.com",
       tableData: [],
       total: 0,
       currentPage: 1,

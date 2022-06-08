@@ -10,14 +10,14 @@
           <i class="eng-title">Monkey Movie</i>
         </div>
         <div class="login-content">
-          <div class="login-type">
+          <!-- <div class="login-type">
             <span :class="{active:loginType}" @click="changeLoginType">验证码登录</span>
             <span :class="{active:!loginType}" @click="changeLoginType">密码登录</span>
-          </div>
+          </div> -->
           <div class="login-main">
             <form>
               <!--手机验证码登录部分-->
-              <div v-show="loginType " class="login-phone">
+              <!-- <div v-show="loginType " class="login-phone">
                 <section class="login-info">
                   <input type="tel" placeholder="手机号" v-model="phone">
                   <button
@@ -38,9 +38,9 @@
                   温馨提示：未注册的手机号，验证后将自动注册账户，且代表已同意
                   <a href="javascript:;">《服务协议与隐私政策》</a>
                 </section>
-              </div>
+              </div> -->
               <!--账号登录部分-->
-              <div v-show="!loginType" class="login-password">
+              <div class="login-password">
                 <section class="login-info">
                   <input type="text" placeholder="用户名" v-model="userName">
                 </section>
@@ -97,10 +97,10 @@
             userName:'',//用户名
             password:'',//密码
             captcha:'',//图形验证码
-            loginType:true,//登录方式
+            loginType: false,//登录方式
             countDown:0, //倒计时
             isShowPassword:false,//密码显示方式
-            captchaSrc:'http://localhost:3000/api/captcha',
+            captchaSrc:'http://api.zebwu.com/api/captcha',
           }
         },
         methods:{
@@ -134,7 +134,7 @@
           },
           //刷新图形验证码
           refreshCaptcha(){
-            this.captchaSrc = 'http://localhost:3000/api/captcha?time='+new Date();
+            this.captchaSrc = 'http://api.zebwu.com/api/captcha?time='+new Date();
           },
           //登录
           async login(){

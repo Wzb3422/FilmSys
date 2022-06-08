@@ -40,7 +40,7 @@
           show-overflow-tooltip
           prop="name">
         </el-table-column>
-        <el-table-column 
+        <el-table-column
         width="200"
         align="center"
         label="操作">
@@ -138,7 +138,7 @@
         data(){
           return{
             //服务器地址
-            server:'http://localhost:3000',
+            server:'http://api.zebwu.com',
             tableData:[],
             total:0,
             currentPage:1,

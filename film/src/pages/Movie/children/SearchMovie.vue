@@ -33,7 +33,7 @@
             name:'',
             movieInfo:[],
             //服务器地址
-            server:'http://localhost:3000',
+            server:'http://api.zebwu.com',
             timer:''
           }
         },

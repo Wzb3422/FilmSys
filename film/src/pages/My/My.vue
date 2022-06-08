@@ -33,7 +33,7 @@
         data(){
           return{
             jsonData:{},
-            avatar:'http://localhost:3000/images/avatar/userIcon.png'
+            avatar:'http://api.zebwu.com/images/avatar/userIcon.png'
           }
         },
         created(){
@@ -43,9 +43,9 @@
           //用户头像
           userAvatar(){
             if (this.jsonData){
-              this.avatar = 'http://localhost:3000'+this.jsonData.avatar
+              this.avatar = 'http://api.zebwu.com'+this.jsonData.avatar
             } else {
-              this.avatar = 'http://localhost:3000/images/avatar/userIcon.png'
+              this.avatar = 'http://api.zebwu.com/images/avatar/userIcon.png'
             }
           },
           //加载用户信息

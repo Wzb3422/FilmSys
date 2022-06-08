@@ -134,7 +134,7 @@ export default {
     updateUserInfo() {
       if (this.jsonData) {
         this.avatarSrc = this.jsonData.avatar;
-        this.avatar = "http://localhost:3000" + this.avatarSrc;
+        this.avatar = "http://api.zebwu.com" + this.avatarSrc;
         this.jsonData.user_name
           ? (this.userName = this.jsonData.user_name)
           : (this.userName = "");

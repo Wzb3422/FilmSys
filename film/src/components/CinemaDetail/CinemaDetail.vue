@@ -87,7 +87,7 @@
             carouselReset:true,
             movieIndex:0,
             //服务器地址
-            server:'http://localhost:3000',
+            server:'http://api.zebwu.com',
             selectedId:0,
             items:[],
             options:{
