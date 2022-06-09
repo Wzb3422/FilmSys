@@ -81,32 +81,28 @@ router.post('/api/pwdLogin',function(req,res){
   let captcha = req.body.captcha;
   console.log('req.session.captcha', req.session.captcha);
   console.log('got captcha', captcha);
-  //判断验证码是否正确
-  if (captcha.toLowerCase()!==req.session.captcha){
-    res.json({error_code:1,message:'验证码不正确'})
-  } else{
-    delete req.session.captcha;
-    let sqlStr = 'SELECT * from t_user WHERE user_name =? LIMIT 1 ;'
-    conn.query(sqlStr,[name],(error,result,field)=>{
-      if (error){
-        res.json({error_code:1,message:'查询用户失败'});
-      } else{
-        result = JSON.parse(JSON.stringify(result));
-        if (result[0]){
-          if (result[0].password===pwd){
-            //保存用户id
-            req.session.userId = result[0].user_id;
-            res.cookie('user_id',result[0].user_id);
-            res.json({success_code:200})
-          } else{
-            res.json({error_code:1,message:'密码错误'});
-          }
+
+  delete req.session.captcha;
+  let sqlStr = 'SELECT * from t_user WHERE user_name =? LIMIT 1 ;'
+  conn.query(sqlStr,[name],(error,result,field)=>{
+    if (error){
+      res.json({error_code:1,message:'查询用户失败'});
+    } else{
+      result = JSON.parse(JSON.stringify(result));
+      if (result[0]){
+        if (result[0].password===pwd){
+          //保存用户id
+          req.session.userId = result[0].user_id;
+          res.cookie('user_id',result[0].user_id);
+          res.json({success_code:200})
         } else{
-          res.json({error:1,message:'用户不存在'});
+          res.json({error_code:1,message:'密码错误'});
         }
+      } else{
+        res.json({error:1,message:'用户不存在'});
       }
-    })
-  }
+    }
+  })
 });
 //获取用户信息
 router.get('/api/getUserInfo',function(req,res){
