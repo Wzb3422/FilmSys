@@ -79,7 +79,8 @@ router.post('/api/pwdLogin',function(req,res){
   let name = req.body.userName;
   let pwd = req.body.password;
   let captcha = req.body.captcha;
-  console.log('captcha', captcha);
+  console.log('req.session.captcha', req.session.captcha);
+  console.log('got captcha', captcha);
   //判断验证码是否正确
   if (captcha.toLowerCase()!==req.session.captcha){
     res.json({error_code:1,message:'验证码不正确'})
